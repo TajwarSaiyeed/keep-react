@@ -84,6 +84,7 @@
     "typescript": "^5.3.3"
   },
   "devDependencies": {
+    "next-nprogress-bar": "^2.1.2",
     "@babel/core": "^7.23.6",
     "@commitlint/cli": "^18.4.3",
     "@commitlint/config-conventional": "^18.4.3",
@@ -135,5 +136,10 @@
       "npm run lint",
       "npm run format"
     ]
+  },
+  "resolutions": {
+    "string-width": "4.2.2",
+    "strip-ansi": "6.0.1",
+    "wrap-ansi": "7.0.0"
   }
 }
