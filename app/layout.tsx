@@ -6,6 +6,7 @@ import Navbar from './components/Navbar'
 import TopProgressBar from './components/TopProgressBar'
 import './docs.css'
 import './globals.css'
+import { ToastWrapper } from './src'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
@@ -18,7 +19,8 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body suppressHydrationWarning className={inter.className}>
+      <body className={inter.className} suppressHydrationWarning={true}>
+        <ToastWrapper />
         <Navbar />
         <main className="relative pt-20">{children}</main>
         <Footer />

@@ -1,6 +1,8 @@
 'use client'
 import { HTMLAttributes, forwardRef, useEffect } from 'react'
 import { createPortal } from 'react-dom'
+import FocusLock from 'react-focus-lock'
+import { RemoveScroll } from 'react-remove-scroll'
 import { cn } from '../../helpers/cn'
 import { Body } from './Body'
 import { Content } from './Content'
@@ -40,9 +42,13 @@ const ModalComponent = forwardRef<HTMLDivElement, ModalProps>(({ isOpen, onClose
 
   return isOpen
     ? createPortal(
-        <div role="dialog" ref={ref} {...props} className={cn(modalTheme.modal, props.className)}>
-          {children}
-        </div>,
+        <RemoveScroll enabled={isOpen}>
+          <FocusLock disabled={!isOpen} returnFocus>
+            <div role="dialog" ref={ref} {...props} className={cn(modalTheme.modal, props.className)}>
+              {children}
+            </div>
+          </FocusLock>
+        </RemoveScroll>,
         document.body,
       )
     : null

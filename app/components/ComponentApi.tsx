@@ -22,14 +22,12 @@ const ComponentApi: FC<ComponentProps> = ({ data }) => {
       <table className="whitespace-no-wrap z-50 mt-10 min-w-max table-auto overflow-hidden rounded-lg bg-white text-left md:w-full lg:min-w-min">
         <thead>
           <tr>
-            <th className="rounded-bl rounded-tl bg-metal-50 px-4 py-3 text-body-4 font-medium text-metal-900">
+            <th className="rounded-bl rounded-tl bg-metal-50 px-4  py-3 text-body-4 font-medium text-metal-900">
               Property
             </th>
             <th className="bg-metal-50 px-4 py-3 text-body-4 font-medium text-metal-900">Description</th>
-            <th className="rounded-br rounded-tr bg-metal-50 px-4 py-3 text-body-4 font-medium text-metal-900">Type</th>
-            <th className="rounded-br rounded-tr bg-metal-50 px-4 py-3 text-body-4 font-medium text-metal-900">
-              Default
-            </th>
+            <th className="bg-metal-50 px-4  py-3 text-body-4 font-medium text-metal-900">Type</th>
+            <th className="rounded-br  bg-metal-50 px-4 py-3 text-body-4 font-medium text-metal-900">Default</th>
           </tr>
         </thead>
         <tbody>
@@ -45,7 +43,7 @@ const ComponentApi: FC<ComponentProps> = ({ data }) => {
                 <td className="border-t border-metal-100 px-4 py-3 text-body-4 text-metal-400">
                   {typeof item.propsType === 'string'
                     ? item.propsType
-                    : item.propsType.map((prop) => (
+                    : item?.propsType?.map((prop) => (
                         <pre key={prop} className="m-0.5 inline-block rounded-lg bg-metal-100 px-2 py-0.5 ">
                           {prop}
                         </pre>

@@ -26,7 +26,7 @@ const CopyCode = ({ code }: { code: string }) => {
           language="javascript"
           style={coldarkDark}
           customStyle={{
-            borderRadius: '8px',
+            borderRadius: '12px',
             backgroundColor: '#1C222B',
           }}>
           {code.trim()}

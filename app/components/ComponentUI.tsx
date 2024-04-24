@@ -1,3 +1,4 @@
+'use client'
 import Link from 'next/link'
 import { ArrowUpRight } from 'phosphor-react'
 import { routes } from '../../routes/routes'
@@ -33,7 +34,7 @@ const ComponentUI = () => {
         </div>
         <div className="mt-9 flex items-center justify-center">
           <Link
-            href="/docs/getting-started/Introduction"
+            href="/docs/getting-started/introduction"
             className="flex items-center gap-2 rounded-lg border border-dashed border-metal-200 bg-white px-6 py-2.5 transition-all duration-300 hover:bg-metal-900 hover:text-white">
             View All Component <ArrowUpRight size={18} />
           </Link>
